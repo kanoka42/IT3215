@@ -6,11 +6,13 @@ let displayVolunteers = function () {
     // display the volunteers in the text area
     let volunteerString = "";
 
+    console.log(volunteerArray)
+
     for (let i = 0; i < volunteerArray.length; i++) {
         volunteerString = volunteerString + "\n" + (i+1) + ". " + volunteerArray[i];
     }
 
-    $("volunteerList").value = volunteerString;
+    $("volunteerList").innerHTML = volunteerString;
 };
 
 let addVolunteer = function () {
