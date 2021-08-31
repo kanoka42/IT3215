@@ -4,15 +4,11 @@
 <head>
     <title>Invitation Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <script type="text/javascript">
-        let preloadedImages = [];
-        preLoad(['images/banner1.jpg', 'images/banner2.jpg', 'images/banner3.jpg']);
+    <script type="text/javascript" src="js/preload.js"></script>
 
-        function preLoad(imageArray) {
-            for (let i = 0; i < imageArray.length; i++) {
-                preloadedImages[i] = new Image();
-                preloadedImages[i].src = imageArray[i];
-            }
+    <script type="text/javascript">
+        window.onload = function () {
+            preloadImages(['images/banner1.jpg', 'images/banner2.jpg', 'images/banner3.jpg'], 'autoImage');
         }
 
     </script>
@@ -41,9 +37,7 @@
     </header>
     <section id="bannerImages">
 	Banner Images<br/>
-        <img src="images/banner1.jpg" alt="Banner"/>
-        <img src="images/banner2.jpg" alt="Banner"/>
-        <img src="images/banner3.jpg" alt="Banner"/>
+        <img id="autoImage">
     </section>
 
 
