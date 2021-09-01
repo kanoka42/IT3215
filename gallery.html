@@ -6,11 +6,6 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <script type="text/javascript" src="js/preload.js"></script>
 
-    <script type="text/javascript">
-        window.onload = function () {
-            preloadImages(['images/firefighter.jpg', 'images/work.jpg', 'images/silhouette.jpg', 'images/event.jpg']);
-        }
-    </script>
 </head>
 
 <body>
@@ -38,30 +33,30 @@
 
 <div class="gallery">
   <a target="_blank" href="images/firefighter.jpg">
-    <img src="images/firefighter.jpg" alt="firefighter" width="300" height="200">
+    <img onmouseenter="enlarge(this)" onmouseleave="reduce(this)" src="images/firefighter.jpg" alt="firefighter" width="300" height="200">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div></div>
 </div>
 
 <div class="gallery">
   <a target="_blank" href="images/work.jpg">
-    <img src="images/work.jpg" alt="work" width="300" height="200">
+    <img onmouseenter="enlarge(this)" onmouseleave="reduce(this)" src="images/work.jpg" alt="work" width="300" height="200">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div></div>
 </div>
 
 <div class="gallery">
   <a target="_blank" href="images/silhouette.jpg">
-    <img src="images/silhouette.jpg" alt="silhouette" width="300" height="200">
+    <img onmouseenter="enlarge(this)" onmouseleave="reduce(this)" src="images/silhouette.jpg" alt="silhouette" width="300" height="200">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div ></div>
 </div>
 
 <div class="gallery">
   <a target="_blank" href="images/event.jpg">
-    <img src="images/event.jpg" alt="event" width="300" height="200">
+    <img onmouseenter="enlarge(this)" onmouseleave="reduce(this)" src="images/event.jpg" alt="event" width="300" height="200">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div ></div>
 </div>
 
     </section>
