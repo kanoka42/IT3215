@@ -18,10 +18,8 @@ function preloadImages(imageArray, elArray, index) {
 
     if (imageArray && imageArray.length > index) {
         let img = new Image();
-        let el = $(elArray[index]);
 
         img.onload = function () {
-            el.src = imageArray[index];
             preloadImages(imageArray, elArray, index + 1);
         }
         img.src = imageArray[index];
@@ -29,4 +27,6 @@ function preloadImages(imageArray, elArray, index) {
         // used to keep the image objects in memory.
         imageMem.push(img);
     }
+
+    console.log(imageMem);
 }
