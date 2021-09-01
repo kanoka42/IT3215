@@ -1,4 +1,5 @@
 let $ = function (id) { return document.getElementById(id); };
+let imageMem = [];
 
 function cycleImages(imageArray, elementId) {
     let i = 0;
@@ -12,14 +13,20 @@ function cycleImages(imageArray, elementId) {
     setInterval(toggleImages, 3000);
 }
 
-function preloadImages(imageArray, index) {
+function preloadImages(imageArray, elArray, index) {
     index = index || 0;
 
     if (imageArray && imageArray.length > index) {
         let img = new Image();
+        let el = $(elArray[index]);
+
         img.onload = function () {
-            preloadImages(imageArray, index + 1);
+            el.src = imageArray[index];
+            preloadImages(imageArray, elArray, index + 1);
         }
         img.src = imageArray[index];
+
+        // used to keep the image objects in memory.
+        imageMem.push(img);
     }
 }
