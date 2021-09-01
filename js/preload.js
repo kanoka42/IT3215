@@ -1,6 +1,6 @@
 let $ = function (id) { return document.getElementById(id); };
 
-function preloadImages(imageArray, elementId) {
+function cycleImages(imageArray, elementId) {
     let i = 0;
     let el = $(elementId);
 
@@ -12,4 +12,14 @@ function preloadImages(imageArray, elementId) {
     setInterval(toggleImages, 3000);
 }
 
+function preloadImages(imageArray, index) {
+    index = index || 0;
 
+    if (imageArray && imageArray.length > index) {
+        let img = new Image();
+        img.onload = function () {
+            preloadImages(imageArray, index + 1);
+        }
+        img.src = imageArray[index];
+    }
+}
