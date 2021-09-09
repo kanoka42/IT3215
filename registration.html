@@ -4,6 +4,8 @@
 <head>
     <title>Invitation Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script type="text/javascript" src="js/validation.js"></script>
+
 </head>
 
 <body>
@@ -28,35 +30,50 @@
         </nav>
     </header>
     <section id="pageForm">
-        <form action="#">
+        <form name="validateForm" onsubmit="return validateFields(validateForm)">
+
             <label for="userName">Username:</label>
-            <input type="text" name="userName" placeholder="Enter your Username" />
+            <input onchange="validateUserName(this.value)" type="text" name="userName" placeholder="Enter your Username" />
+            <div id="userNameError" class="errorMsg"></div>
 
             <label for="Password">Password:
             </label>
-            <input type="password" name="password" placeholder="Enter your Password" />
+            <input onchange="validatePassword(this.value)" type="password" name="password" placeholder="Enter your Password" />
+            <div id="passwordError" class="errorMsg"></div>
 
             <label for="passwordVerify">Verify your Password:
             </label>
-            <input type="password" name="passwordVerify" placeholder="Enter in your Password again" />
+            <input onchange="validateVerify(this.value, form.password.value)" type="password" name="passwordVerify" placeholder="Enter in your Password again" />
+            <div id="passwordVerifyError" class="errorMsg"></div>
 
             <label for="firstName">First Name:
             </label>
-            <input type="text" name="firstName" placeholder="Enter your First Name" />
+            <input onchange="validateFirstName(this.value)" type="text" name="firstName" placeholder="Enter your First Name" />
+            <div id="firstNameError" class="errorMsg"></div>
 
-            <label for="hostName">Last Name:
+            <label for="lastName">Last Name:
             </label>
-            <input type="text" name="lastName" placeholder="Enter your Last Name" />
+            <input onchange="validateLastName(this.value)" type="text" name="lastName" placeholder="Enter your Last Name" />
+            <div id="lastNameError" class="errorMsg"></div>
+
             <label for="email">Email:
             </label>
-            <input type="text" name="email" placeholder="Enter your Email Address" />
+
+            <input onchange="validateEmail(this.value)" type="text" name="email" placeholder="Enter your Email Address" />
+            <div id="emailError" class="errorMsg"></div>
+
+
 			<label for="phoneNumber">Phone Number
             </label>
-            <input type="text" name="lastName" placeholder="Enter your Phone Number" />
+            <input onchange="validatePhone(this.value)" type="text" name="phoneNumber" placeholder="Enter your Phone Number" />
+            <div id="phoneNumberError" class="errorMsg"></div>
+
 			<label for="signUpNewsletter">Sign up for newsletter:
             </label>
-			  <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes 
-				<input type="radio" name="signUpNewsletter" value="No"> No
+
+            <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes
+            <input type="radio" name="signUpNewsletter" value="No"> No
+
             <input type="submit" value="Next step">
         </form>
     </section>
