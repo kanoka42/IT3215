@@ -5,6 +5,7 @@ let emailReg = '^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$';
 let phoneReg = '^\\(?([0-9]{3})\\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$';
 let allErrors = [];
 
+
 const isEmpty = (userString) => {
     let str = userString.trim().length;
     return !str;
@@ -98,8 +99,7 @@ const validatePhone = (phone) => {
     }
 }
 
-
-function validateFields(form) {
+function validateFields( form) {
 
     allErrors = [];
 
@@ -111,8 +111,9 @@ function validateFields(form) {
     validateEmail(form.email.value);
     validatePhone(form.phoneNumber.value);
 
-    if (allErrors === []) {
-        return true;
+
+    if (allErrors.length === 0) {
+        getFormData('validateForm');
     } else {
         allErrors[0].focus();
         return false;

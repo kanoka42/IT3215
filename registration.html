@@ -5,6 +5,7 @@
     <title>Invitation Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <script type="text/javascript" src="js/validation.js"></script>
+    <script type="text/javascript" src="js/registration.js"></script>
 
 </head>
 
@@ -30,7 +31,7 @@
         </nav>
     </header>
     <section id="pageForm">
-        <form name="validateForm" onsubmit="return validateFields(validateForm)">
+        <form id="validateForm" name="validateForm" onsubmit="return validateFields(validateForm)">
 
             <label for="userName">Username:</label>
             <input onchange="validateUserName(this.value)" type="text" name="userName" placeholder="Enter your Username" />
