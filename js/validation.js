@@ -99,26 +99,29 @@ const validatePhone = (phone) => {
     }
 }
 
-function validateFields( form) {
-    document.getElementById("validateForm").addEventListener("click", function(event){
-        event.preventDefault()
-    });
+function validateFields(form) {
+        $('validateForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+        });
 
-    allErrors = [];
+        allErrors = [];
 
-    validateUserName(form.userName.value);
-    validatePassword(form.password.value);
-    validateVerify(form.passwordVerify.value, form.password.value);
-    validateFirstName(form.firstName.value);
-    validateLastName(form.lastName.value);
-    validateEmail(form.email.value);
-    validatePhone(form.phoneNumber.value);
+        validateUserName(form.userName.value);
+        validatePassword(form.password.value);
+        validateVerify(form.passwordVerify.value, form.password.value);
+        validateFirstName(form.firstName.value);
+        validateLastName(form.lastName.value);
+        validateEmail(form.email.value);
+        validatePhone(form.phoneNumber.value);
 
 
-    if (allErrors.length === 0) {
-        getFormData('validateForm');
-    } else {
-        allErrors[0].focus();
-        return false;
-    }
+        if (allErrors.length === 0) {
+            getFormData('validateForm');
+            window.location.href = 'confirm.html';
+            return false;
+        } else {
+            allErrors[0].focus();
+            return false;
+        }
+
 }
