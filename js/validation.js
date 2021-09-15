@@ -100,6 +100,9 @@ const validatePhone = (phone) => {
 }
 
 function validateFields( form) {
+    document.getElementById("validateForm").addEventListener("click", function(event){
+        event.preventDefault()
+    });
 
     allErrors = [];
 
