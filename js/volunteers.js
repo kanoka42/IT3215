@@ -12,7 +12,7 @@ let displayVolunteers = function () {
         volunteerString = volunteerString + "\n" + (i+1) + ". " + volunteerArray[i];
     }
 
-    $("volunteerList").innerHTML = volunteerString;
+    $("volunteerList").value = volunteerString;
 };
 
 let addVolunteer = function () {
